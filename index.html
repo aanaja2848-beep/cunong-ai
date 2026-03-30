@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cunong AI Trader</title>
+</head>
+<body>
+
+<h1>🔥 Cunong AI Trader</h1>
+
+<input id="harga" placeholder="Masukkan harga">
+<button onclick="analisa()">Analisa</button>
+
+<h2 id="hasil"></h2>
+
+<script>
+function analisa() {
+  let harga = document.getElementById("harga").value;
+  let hasil = harga > 1000 ? "📈 BUY" : "📉 SELL";
+  document.getElementById("hasil").innerText = hasil;
+}
+</script>
+
+</body>
+</html>
