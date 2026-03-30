@@ -2,20 +2,73 @@
 <html>
 <head>
   <title>Cunong AI Trader</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    h1 {
+      color: #a855f7;
+    }
+
+    input {
+      padding: 12px;
+      width: 200px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      padding: 12px;
+      background: purple;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-left: 5px;
+    }
+
+    #hasil {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .box {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
 
 <h1>🔥 Cunong AI Trader</h1>
 
-<input id="harga" placeholder="Masukkan harga">
-<button onclick="analisa()">Analisa</button>
+<div class="box">
+  <p>Masukkan harga market:</p>
 
-<h2 id="hasil"></h2>
+  <input id="harga" placeholder="contoh: 5000">
+  <button onclick="analisa()">Analisa</button>
+
+  <h2 id="hasil"></h2>
+</div>
 
 <script>
 function analisa() {
   let harga = document.getElementById("harga").value;
-  let hasil = harga > 1000 ? "📈 BUY" : "📉 SELL";
+  let hasil = "";
+
+  if (harga > 1000) {
+    hasil = "📈 BUY 🔥 Trend naik kuat";
+  } else if (harga < 1000) {
+    hasil = "📉 SELL ⚠️ Trend turun";
+  } else {
+    hasil = "⏸️ Tunggu market";
+  }
+
   document.getElementById("hasil").innerText = hasil;
 }
 </script>
